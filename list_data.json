@@ -1,22 +1,40 @@
 {
 	"movies": [
 		{
-			"Title": "Lost In Translation",
-			"Director": "Sofia Coppola",
-			"Rating": "R",
-			"Year": "2003"
-		},
-		{
-			"Title": "Casino Royale",
-			"Director": "Martin Campbell",
-			"Rating": "PG-13",
-			"Year": "2006"
-		},
-		{
-			"Title": "The Dark Knight",
+			"Title": "Inception",
 			"Director": "Christopher Nolan",
 			"Rating": "PG-13",
-			"Year": "2008"
+			"Year": "2010"
+		},
+		{
+			"Title": "The Grand Budapest Hotel",
+			"Director": "Wes Anderson",
+			"Rating": "R",
+			"Year": "2014"
+		},
+		{
+			"Title": "Parasite",
+			"Director": "Bong Joon-ho",
+			"Rating": "R",
+			"Year": "2019"
+		},
+		{
+			"Title": "La La Land",
+			"Director": "Damien Chazelle",
+			"Rating": "PG-13",
+			"Year": "2016"
+		},
+		{
+			"Title": "The Shape of Water",
+			"Director": "Guillermo del Toro",
+			"Rating": "R",
+			"Year": "2017"
+		},
+		{
+			"Title": "Moonlight",
+			"Director": "Barry Jenkins",
+			"Rating": "R",
+			"Year": "2016"
 		}
 	]
 }

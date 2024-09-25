@@ -1,0 +1,8 @@
+<!ELEMENT restaurants (restaurant+)>
+<!ELEMENT restaurant (id, name, cuisine, city, open, close)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT cuisine (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT open (#PCDATA)>
+<!ELEMENT close (#PCDATA)>
