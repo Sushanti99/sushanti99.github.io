@@ -1,52 +1,99 @@
-<!DOCTYPE HTML>  
-<html>  
-    <header>
-        <link rel="stylesheet" href="stylenew.css">
-        <link rel="stylesheet" href="table_style.css">
-        <title>Sushanti Kerani</title>
-    </header>
-    <body>  
-        <!---Navigation--->
-        <!--This section of code defines the navigation bar at the top of the page.  The classes used here are defined in the style.css file.-->
-        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
-                <!--This code defines the "My Webpage" link in the top left corner of the navigation pane-->
-                <a class="navbar-brand" href="./index.html">My Webpage</a>
-                <!--This code defines the "List" link in the top right corner of the navigation pane-->
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="./list.html">List</a></li>
-                </ul>
-            </div>
-        </nav>
-        <!--This section defines the middle section of the webpage-->
-        <header class="masthead bg-primary text-white text-center">
-            <div class="container d-flex align-items-center flex-column">
-                
-                <!-- This code is for the student name-->
-                <h1 class="masthead-heading text-uppercase mb-0">Sushanti Kerani</h1>
-                <!--This code creates the two lines separating the student name from the subtitle-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!--This code creates the subheading underneath the line dividers-->
-                <p class="masthead-subheading font-weight-light mb-0">School of Information Student</p>
-            </div>
-        </header>
-        <section class="text-center">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sushanti Kerani</title>
+  <meta name="description" content="Sushanti Kerani, Machine Learning Engineer at Adobe, previously at UC Berkeley.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    (function () {
+      var saved = localStorage.getItem('theme');
+      var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
 
-            <div class="section text-center">
-                <div class="col-md-6 col-lg-4 mb-5 mx-auto">
-                    <p>
-                        Sushanti is a Master's student at University of California, Berkeley,
-                        studying Information Management. Her focus area is Generative AI and
-                        Products
-                    </p>
-                </div>
-            </div>
-                
-            </div>
-        </section>
-    </body>
+  <button id="theme-toggle" aria-label="Toggle light and dark mode"></button>
 
+  <main class="wrap">
+
+    <section class="hero">
+      <img class="avatar" src="assets/img/profile.jpg" alt="Sushanti Kerani">
+      <h1>Sushanti Kerani</h1>
+      <p class="role">Machine Learning Engineer @ Adobe &middot; Previously at UC Berkeley</p>
+      <p class="motto">I build AI systems that ask before they assume.</p>
+      <nav class="links" aria-label="Social links">
+        <a href="https://www.linkedin.com/in/sushanti-kerani/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+          <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://github.com/Sushanti99" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+          <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a href="https://x.com/itsasmolsush" target="_blank" rel="noopener" aria-label="Twitter" title="Twitter">
+          <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>
+        </a>
+        <a href="https://substack.com/@sushanti99" target="_blank" rel="noopener" aria-label="Substack" title="Substack">
+          <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+        </a>
+      </nav>
+    </section>
+
+    <section class="row">
+      <div class="row-label"><h2>Introduction</h2></div>
+      <div class="row-content">
+        <p>
+          I started out as a computer vision engineer and backend developer, back when that
+          was the obvious path into ML. As the field shifted toward NLP, I shifted with it,
+          moving into NLP backend work and MLOps, and from there into machine learning,
+          human-AI simulation, and multi-agent orchestration. That's slowly pulled me
+          toward more systemic and agentic AI, mixing in economics along the way, and more
+          recently into interpretability.
+        </p>
+        <p>
+          Above all, I love building products. Right now I'm most interested in how agents
+          understand context and get better at improving themselves over time. Day to day,
+          I'm a machine learning engineer at Adobe.
+        </p>
+        <p>
+          Before that, I worked across a handful of startups in India, then moved to
+          Berkeley two years ago for my master's. It's been one of the best decisions I've made.
+          California has given me a lot of nature and a lot of sun, and it turns out those
+          might be two of the best things in life.
+        </p>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="row-label"><h2>Projects</h2></div>
+      <div class="row-content project-list">
+
+        <article class="project">
+          <h3><a href="https://github.com/Sushanti99/Disambiguation-As-Middleware-for-Multi-Agent-Orchestration" target="_blank" rel="noopener">CLARIFY</a></h3>
+          <p>A framework-agnostic disambiguation layer for multi-agent AI assistants, deployed on Adobe Experience Platform. It sits between a user query and an agent orchestrator (LangGraph, CrewAI, AutoGen, or a custom router) and catches two failure modes generic routers miss: agent-selection ambiguity, where a query plausibly matches more than one agent's capabilities, and domain-grounding ambiguity, where the right agent gets picked but the query is missing something it needs to act on. Deployed on real production traffic, with a measurable lift in multi-agent conflict resolution. Submitted as first-author research to AAAI 2026.</p>
+        </article>
+
+        <article class="project">
+          <h3><a href="https://civicsim.xyz/" target="_blank" rel="noopener">CivicSim</a></h3>
+          <p>An agent-based simulator of U.S. public opinion. Agents are instantiated from American Community Survey microdata and conditioned on demographic-opinion distributions from the Pew American Trends Panel, aiming for a synthetic electorate whose opinions track the real U.S. adult population at the demographic-cell level. Includes experiments benchmarking demographic alignment between the census and survey corpora and testing how well opinions transfer across geographies. The thesis: realistic policy simulation needs grounding in real population data, not just model scale.</p>
+        </article>
+
+        <article class="project">
+          <h3><a href="https://brainsquared.xyz/" target="_blank" rel="noopener">BrainSquared</a></h3>
+          <p>An open-source, local-first agent harness, one interface for every app you use. It builds a living knowledge base from your tools (Gmail, Slack, Notion, your calendar, GitHub) by reading and writing a single Obsidian markdown vault, and surfaces what needs your attention, drafts replies in your voice, and closes tasks back into markdown. Everything runs locally; there's no cloud middleman.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Sushanti Kerani</p>
+    </footer>
+
+  </main>
+
+  <script src="assets/js/theme.js"></script>
+</body>
 </html>
