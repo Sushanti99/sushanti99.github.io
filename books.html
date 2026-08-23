@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Books &middot; Sushanti Kerani</title>
+  <meta name="description" content="Books Sushanti Kerani is reading and has read.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    (function () {
+      var saved = localStorage.getItem('theme');
+      var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <button id="theme-toggle" aria-label="Toggle light and dark mode"></button>
+
+  <main class="wrap">
+
+    <nav class="site-nav" aria-label="Sections">
+      <a href="index.html">&larr; Sushanti Kerani</a>
+    </nav>
+
+    <section class="row">
+      <div class="row-label"><h2>Books</h2></div>
+      <div class="row-content">
+        <div class="book-group">
+          <h3 class="book-group-label">Reading</h3>
+          <ul class="book-list">
+            <li class="book"><span class="book-title">One Hundred Years of Solitude</span><span class="book-author">Gabriel Garc&iacute;a M&aacute;rquez</span></li>
+          </ul>
+        </div>
+
+        <div class="book-group">
+          <h3 class="book-group-label">Read</h3>
+          <ul class="book-list">
+            <li class="book"><span class="book-title">Thinking, Fast and Slow</span><span class="book-author">Daniel Kahneman</span></li>
+            <li class="book"><span class="book-title">Why Nations Fail</span><span class="book-author">Daron Acemo&#287;lu &amp; James Robinson</span></li>
+            <li class="book"><span class="book-title">Technofeudalism</span><span class="book-author">Yanis Varoufakis</span></li>
+            <li class="book"><span class="book-title">Antifragile</span><span class="book-author">Nassim Nicholas Taleb</span></li>
+            <li class="book"><span class="book-title">The Fabric of Reality</span><span class="book-author">David Deutsch</span></li>
+            <li class="book"><span class="book-title">Just Kids</span><span class="book-author">Patti Smith</span></li>
+            <li class="book"><span class="book-title">A Thousand Splendid Suns</span><span class="book-author">Khaled Hosseini</span></li>
+            <li class="book"><span class="book-title">Normal People</span><span class="book-author">Sally Rooney</span></li>
+            <li class="book"><span class="book-title">1984</span><span class="book-author">George Orwell</span></li>
+            <li class="book"><span class="book-title">The Martian</span><span class="book-author">Andy Weir</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Sushanti Kerani</p>
+    </footer>
+
+  </main>
+
+  <script src="assets/js/theme.js"></script>
+</body>
+</html>

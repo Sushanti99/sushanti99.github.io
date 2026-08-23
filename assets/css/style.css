@@ -369,3 +369,24 @@ footer {
   margin: 0 0 0.5rem;
   opacity: 0.8;
 }
+
+/* Site nav */
+
+.site-nav {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+  font-size: 0.9rem;
+}
+
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.site-nav a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
