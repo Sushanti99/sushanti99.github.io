@@ -355,3 +355,17 @@ footer {
   font-size: 0.875rem;
   color: var(--muted);
 }
+
+.book-group + .book-group {
+  margin-top: 1.6rem;
+}
+
+.book-group-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  opacity: 0.8;
+}
