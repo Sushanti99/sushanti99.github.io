@@ -165,6 +165,7 @@ em {
 
 .socials {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 2rem;
 }
@@ -184,6 +185,22 @@ em {
   width: 17px;
   height: 17px;
   fill: currentColor;
+}
+
+.socials .mail {
+  width: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0 1.1rem 0 0.95rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+.socials .mail svg {
+  fill: none;
 }
 
 .socials a:hover {
