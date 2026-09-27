@@ -1,29 +1,20 @@
 /* Gallery wall: white plaster, black ink, one grotesk, one italic accent. */
 
 :root {
-  --bg: #fbfbfa;
-  --ink: #0d0d0d;
-  --mid: #6e6e6e;
-  --soft: #a3a3a3;
-  --rule: #e6e6e3;
-  --plate: #f1f1ef;
-  --signal: #ff4a1c;
+  /* Bold: forest green + cream. To roll back to the light wall, restore
+     --bg #fbfbfa, --ink #0d0d0d, --mid #6e6e6e, --soft #a3a3a3, --rule #e6e6e3, --plate #f1f1ef. */
+  --bg: #12342b;
+  --ink: #f6f0dc;
+  --mid: rgba(246, 240, 220, 0.66);
+  --soft: rgba(246, 240, 220, 0.42);
+  --rule: rgba(246, 240, 220, 0.14);
+  --plate: #0e2a23;
+  --signal: #ff7a45;
   --sans: "Geist", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
   --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
-  color-scheme: light dark;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0b0b0b;
-    --ink: #ededeb;
-    --mid: #8f8f8c;
-    --soft: #5c5c5a;
-    --rule: #1f1f1e;
-    --plate: #151515;
-  }
+  color-scheme: dark;
 }
 
 * {
@@ -78,9 +69,14 @@ em {
 }
 
 .brand {
-  font-weight: 500;
-  letter-spacing: -0.01em;
+  color: var(--mid);
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.brand:hover,
+.brand[aria-current="page"] {
+  color: var(--ink);
 }
 
 .nav {
@@ -126,64 +122,75 @@ em {
 /* Statement */
 
 .statement {
-  padding: 9rem 0 7rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 8rem 0 7rem;
+}
+
+.face {
+  flex-shrink: 0;
+  width: 148px;
+  height: 148px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px var(--rule), 0 0 0 8px var(--bg), 0 0 0 9px var(--rule);
+  transition: transform 0.8s var(--ease);
+}
+
+.face:hover {
+  transform: rotate(-4deg) scale(1.03);
 }
 
 .statement h1 {
-  font-size: clamp(2.2rem, 5.4vw, 4.1rem);
+  font-size: clamp(2.6rem, 6.4vw, 4.8rem);
   font-weight: 450;
-  line-height: 1.08;
-  letter-spacing: -0.045em;
-  max-width: 19.5ch;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  margin: 0 0 1rem;
+}
+
+.now {
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  letter-spacing: -0.025em;
+  line-height: 1.3;
+  color: var(--mid);
   margin: 0;
 }
 
-.statement h1 em {
+.now em {
+  color: var(--ink);
   font-size: 1.12em;
-  line-height: 0;
-}
-
-.chip {
-  display: inline-block;
-  vertical-align: -0.1em;
-  width: 0.92em;
-  height: 0.92em;
-  margin: 0 0.06em;
-  border-radius: 0.24em;
-  object-fit: cover;
-  transition: transform 0.6s var(--ease);
-}
-
-.chip--face {
-  width: 1.05em;
-  height: 1.05em;
-  vertical-align: -0.16em;
-  border-radius: 50%;
-  filter: grayscale(1);
-}
-
-.statement h1:hover .chip {
-  transform: rotate(-8deg) scale(1.08);
 }
 
 .socials {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.75rem;
-  margin-top: 3rem;
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  gap: 0.75rem;
+  margin-top: 2rem;
 }
 
-.socials a span {
-  display: inline-block;
-  transition: transform 0.5s var(--ease);
+.socials a {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--rule);
+  color: var(--ink);
+  transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease, transform 0.6s var(--ease);
 }
 
-.socials a:hover span {
-  transform: translate(2px, -2px);
+.socials svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+}
+
+.socials a:hover {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+  transform: translateY(-3px);
 }
 
 /* Sections */
@@ -270,9 +277,11 @@ em {
 }
 
 .cv-org img {
-  width: 22px;
-  height: 22px;
-  border-radius: 6px;
+  width: 24px;
+  height: 24px;
+  padding: 3px;
+  border-radius: 7px;
+  background: #fff;
   object-fit: contain;
   transition: transform 0.6s var(--ease);
 }
@@ -457,7 +466,7 @@ a:hover .mark--civic .hot,
   opacity: 0;
   transform: translate3d(var(--x, 0), var(--y, 0), 0) scale(0.85) rotate(-3deg);
   transition: opacity 0.35s ease, transform 0.5s var(--ease);
-  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 30px 60px -24px rgba(0, 0, 0, 0.6);
 }
 
 .peek.on {
@@ -667,7 +676,15 @@ a:hover .mark--civic .hot,
   }
 
   .statement {
-    padding: 5rem 0 4.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 4rem 0 4.5rem;
+  }
+
+  .face {
+    width: 104px;
+    height: 104px;
   }
 
   .sec,
