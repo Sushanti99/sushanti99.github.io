@@ -10,6 +10,7 @@
   --rule: rgba(246, 240, 220, 0.14);
   --plate: #0e2a23;
   --signal: #ff7a45;
+  --yellow: #f5cd4f;
   --sans: "Geist", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
   --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
@@ -147,6 +148,7 @@ em {
   font-weight: 450;
   line-height: 1;
   letter-spacing: -0.05em;
+  color: var(--yellow);
   margin: 0 0 1rem;
 }
 
@@ -222,17 +224,19 @@ em {
 
 .sec-label {
   font-family: var(--mono);
-  font-size: 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--mid);
-  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--yellow);
+  font-weight: 500;
   margin: 0;
 }
 
 .sec-label .n {
-  color: var(--soft);
-  margin-right: 0.6rem;
+  color: var(--yellow);
+  opacity: 0.6;
+  margin-right: 0.7rem;
 }
 
 .prose p {
@@ -512,6 +516,7 @@ a:hover .mark--civic .hot,
 }
 
 .page-head h1 {
+  color: var(--yellow);
   font-size: clamp(2.6rem, 7vw, 5.4rem);
   font-weight: 450;
   letter-spacing: -0.05em;
