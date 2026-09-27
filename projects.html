@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects &middot; Sushanti</title>
+  <meta name="description" content="Projects by Sushanti: CivicSim, BrainSquared and brb.">
+  <link rel="icon" href="assets/img/avatar.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@1&family=Kalam:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="top">
+      <a class="brand" href="index.html">Sushanti</a>
+      <nav class="nav" aria-label="Pages"><a href="index.html">Work</a><a href="projects.html" aria-current="page">Projects</a><a href="books.html">Books</a></nav>
+    </header>
+
+    <main>
+      <section class="page-head">
+        <h1 data-split>Projects</h1>
+        <p class="rise" style="--d:.4s">Things I build on the side, mostly about agents, people, and the context between them.</p>
+      </section>
+
+      <article class="case" id="civicsim">
+        <div class="case-head">
+          <div class="case-title"><span class="mark mark--civic" aria-hidden="true"><svg viewBox="0 0 24 24"><g><circle cx="6" cy="6" r="1.6"/><circle cx="12" cy="6" r="1.6"/><circle cx="18" cy="6" r="1.6"/><circle cx="6" cy="12" r="1.6"/><circle class="hot" cx="12" cy="12" r="1.6"/><circle cx="18" cy="12" r="1.6"/><circle class="hot" cx="6" cy="18" r="1.6"/><circle cx="12" cy="18" r="1.6"/><circle class="hot" cx="18" cy="18" r="1.6"/></g></svg></span><h2>CivicSim</h2></div>
+          <p class="case-lede rise">A synthetic U.S. electorate for stress-testing policy before it meets the public.</p>
+        </div>
+        <figure class="plate"><img src="assets/img/projects/civicsim.jpg" alt="CivicSim" loading="lazy"></figure>
+        <div class="case-body">
+          <ul class="meta rise"><li><b>Type</b>Research, simulation</li><li><b>Data</b>ACS microdata, Pew ATP</li><li><b>Visit</b><a class="u" href="https://civicsim.xyz/" target="_blank" rel="noopener">civicsim.xyz &#8599;</a></li></ul>
+          <div class="prose" data-stagger>
+              <p>Agents are instantiated from American Community Survey microdata and conditioned on demographic-opinion distributions from the Pew American Trends Panel. The aim is a synthetic electorate whose opinions track the real U.S. adult population, one demographic cell at a time.</p>
+              <p>Experiments benchmark demographic alignment between the census and survey corpora, and test how well opinions transfer across geographies.</p>
+              <p>The thesis: realistic policy simulation needs grounding in real population data, not just model scale.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="case" id="brainsquared">
+        <div class="case-head">
+          <div class="case-title"><span class="mark mark--brain" aria-hidden="true">b<span class="sq">2</span></span><h2>BrainSquared</h2></div>
+          <p class="case-lede rise">One interface for every app you use, run by an agent that knows your context.</p>
+        </div>
+        <figure class="plate"><img src="assets/img/projects/brainsquared.jpg" alt="BrainSquared" loading="lazy"></figure>
+        <div class="case-body">
+          <ul class="meta rise"><li><b>Type</b>Open source, Mac app</li><li><b>Built on</b>Obsidian, Claude Code</li><li><b>Visit</b><a class="u" href="https://brainsquared.xyz/" target="_blank" rel="noopener">brainsquared.xyz &#8599;</a><br><a class="u" href="https://github.com/Sushanti99/BrainSquared" target="_blank" rel="noopener">GitHub &#8599;</a></li></ul>
+          <div class="prose" data-stagger>
+              <p>Most of a day goes to context-switching: Gmail, then Slack, then Notion, the calendar, a GitHub PR, and around again. Each app only knows its own slice.</p>
+              <p>BrainSquared connects them into a living knowledge base, a single Obsidian vault that an LLM keeps up to date like a wiki rather than a data dump. It surfaces what needs your attention, drafts replies in your voice, and closes tasks back into markdown.</p>
+              <p>Everything runs locally. There&rsquo;s no cloud middleman, and your data stays yours.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="case" id="brb">
+        <div class="case-head">
+          <div class="case-title"><span class="mark mark--brb" aria-hidden="true">brb<i></i></span><h2>brb</h2></div>
+          <p class="case-lede rise">Take a break while Claude Code works. Get called back the moment it&rsquo;s done.</p>
+        </div>
+        <figure class="plate plate--square"><img src="assets/img/projects/brb.jpg" alt="brb" loading="lazy"></figure>
+        <div class="case-body">
+          <ul class="meta rise"><li><b>Type</b>Claude Code plugin</li><li><b>Runs on</b>macOS, plain bash</li><li><b>Visit</b><a class="u" href="https://github.com/usebrb/brb" target="_blank" rel="noopener">GitHub &#8599;</a></li></ul>
+          <div class="prose" data-stagger>
+              <p>brb hangs off Claude Code&rsquo;s own lifecycle hooks: no AI, no polling, no terminal scraping. When a turn runs long enough to be worth leaving, it offers a break and a short list of places to go on purpose.</p>
+              <p>When Claude finishes, brb checks whether you actually left and whether the turn earned a callback, then brings you back.</p>
+              <p>An optional menu bar app draws the panel and the callback natively, and keeps a running count of the turn.</p>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="foot">
+      <span>&copy; 2026 Sushanti</span>
+      <a class="u" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top &uarr;</a>
+    </footer>
+
+  </div>
+  <script src="assets/js/motion.js"></script>
+</body>
+</html>
