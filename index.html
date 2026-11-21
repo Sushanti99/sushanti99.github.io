@@ -8,109 +8,311 @@
   <link rel="icon" href="assets/img/avatar.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@1&family=Kalam:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400;500&family=Kalam:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-  <div class="wrap">
 
-    <header class="top">
-      <a class="brand" href="index.html" aria-current="page">Home</a>
-      <nav class="nav" aria-label="Pages"><a href="projects.html">Projects</a><a href="books.html">Books</a></nav>
-    </header>
+  <div class="opening" hidden>
+    <div class="shaft" aria-hidden="true"><div class="bands"></div><i class="rail rail-l"></i><i class="rail rail-r"></i></div>
 
-    <main>
-      <section class="statement">
-        <img class="face rise" src="assets/img/avatar.jpg" alt="Sushanti" width="148" height="148">
-        <div class="statement-text">
-          <h1 data-split>Hi, I&rsquo;m Sushanti.</h1>
-          <p class="now rise" style="--d:.55s">Building <em>memory</em> and context for agents.</p>
-          <nav class="socials rise" style="--d:.8s" aria-label="Elsewhere">
+    <div class="note">
+      <p class="note-kicker">Before you go in</p>
+      <h2 class="note-text">I finally finished Portal&nbsp;2,<br>five years after I started it.</h2>
+      <p class="note-sub">So this website is themed after it, in its memory.</p>
+      <p class="note-sign">&mdash; Sushanti</p>
+    </div>
+
+    <button class="lift" type="button" aria-label="Step into the elevator">
+      <svg class="lift-svg" viewBox="0 0 200 340" aria-hidden="true">
+        <defs>
+          <linearGradient id="lg-glass" x1="0" x2="1">
+            <stop offset="0" stop-color="#cfefff" stop-opacity=".42"/>
+            <stop offset=".16" stop-color="#cfefff" stop-opacity=".1"/>
+            <stop offset=".5" stop-color="#cfefff" stop-opacity=".04"/>
+            <stop offset=".84" stop-color="#cfefff" stop-opacity=".12"/>
+            <stop offset="1" stop-color="#cfefff" stop-opacity=".44"/>
+          </linearGradient>
+          <linearGradient id="lg-inner" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#a8dcff" stop-opacity=".06"/>
+            <stop offset="1" stop-color="#a8dcff" stop-opacity=".42"/>
+          </linearGradient>
+          <linearGradient id="lg-metal" x1="0" x2="1">
+            <stop offset="0" stop-color="#16191b"/>
+            <stop offset=".3" stop-color="#4c545a"/>
+            <stop offset=".7" stop-color="#2b3034"/>
+            <stop offset="1" stop-color="#121416"/>
+          </linearGradient>
+          <linearGradient id="lg-door" x1="0" x2="1">
+            <stop offset="0" stop-color="#e6f6ff" stop-opacity=".26"/>
+            <stop offset=".5" stop-color="#e6f6ff" stop-opacity=".08"/>
+            <stop offset="1" stop-color="#e6f6ff" stop-opacity=".26"/>
+          </linearGradient>
+          <clipPath id="lg-body"><rect x="24" y="34" width="152" height="252"/></clipPath>
+        </defs>
+        <ellipse class="ground" cx="100" cy="322" rx="112" ry="14"/>
+        <ellipse cx="100" cy="286" rx="84" ry="14" fill="#2a2f33"/>
+        <rect x="24" y="34" width="152" height="252" fill="url(#lg-inner)"/>
+        <ellipse class="inner-glow" cx="100" cy="284" rx="66" ry="9"/>
+        <g clip-path="url(#lg-body)">
+          <g class="door door-l"><rect x="62" y="34" width="38" height="252" fill="url(#lg-door)"/><path d="M99.5 34v252" stroke="#fff" stroke-opacity=".55"/></g>
+          <g class="door door-r"><rect x="100" y="34" width="38" height="252" fill="url(#lg-door)"/><path d="M100.5 34v252" stroke="#fff" stroke-opacity=".55"/></g>
+        </g>
+        <rect x="24" y="34" width="152" height="252" fill="url(#lg-glass)"/>
+        <g fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="1.2">
+          <path d="M31 34v252M47 36v250M153 36v250M169 34v252"/>
+          <path d="M24 122q76 14 152 0M24 204q76 14 152 0" stroke-opacity=".14"/>
+        </g>
+        <path d="M62 36v250M138 36v250" stroke="#fff" stroke-opacity=".4" stroke-width="1.6"/>
+        <ellipse cx="100" cy="22" rx="82" ry="11" fill="#2c3236"/>
+        <path d="M18 22v12q82 16 164 0V22q-82 16-164 0z" fill="url(#lg-metal)"/>
+        <path class="lift-light" d="M30 35q70 13 140 0" fill="none" stroke-width="2.2"/>
+        <path d="M16 286v14q84 22 168 0v-14q-84 20-168 0z" fill="url(#lg-metal)"/>
+        <path class="lift-light" d="M22 294q78 20 156 0" fill="none" stroke-width="3"/>
+      </svg>
+    </button>
+
+    <button class="opening-cta" type="button">Step into the elevator</button>
+    <button class="skip" type="button">Skip</button>
+  </div>
+
+  <header class="hud-top">
+    <a class="hud-brand" href="./" data-go="lobby"><span class="hud-logo" aria-hidden="true"></span>Sushanti<span class="hud-room" aria-live="polite"></span></a>
+    <nav class="hud-nav" aria-label="Chambers">
+      <a href="#about" data-go="about">About</a>
+      <a href="#projects" data-go="projects">Projects</a>
+      <a href="#books" data-go="books">Books</a>
+    </nav>
+  </header>
+
+  <div id="stage-root" aria-live="off"></div>
+
+  <main id="content">
+
+    <!-- Chamber 00 -->
+    <section class="room-content" id="lobby" data-room="lobby">
+      <div class="lobby">
+        <button class="portrait solid" type="button" aria-label="Sushanti. Click to swap the portal colour.">
+          <span class="portrait-ring" aria-hidden="true"></span>
+          <img src="assets/img/avatar.jpg" alt="Sushanti" width="220" height="220">
+        </button>
+        <div class="lobby-card solid">
+          <p class="tag"><span class="dot"></span>Chamber 00 &middot; Lobby</p>
+          <h1>Hi, I&rsquo;m Sushanti.</h1>
+          <p class="lede">Building <em>memory</em> and context for agents. Applied AI at Adobe.</p>
+          <nav class="socials" aria-label="Elsewhere">
             <a href="https://www.linkedin.com/in/sushanti-kerani/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-            <a href="https://github.com/Sushanti99" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
-            <a href="https://x.com/itsasmolsush" target="_blank" rel="noopener" aria-label="X" title="X"><svg viewBox="0 0 24 24"><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg></a>
+            <a href="https://github.com/Sushanti99" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.040-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.020.006 2.040.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+            <a href="https://x.com/itsasmolsush" target="_blank" rel="noopener" aria-label="X" title="X"><svg viewBox="0 0 24 24"><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.090h-3.182z"/></svg></a>
             <a href="https://substack.com/@sushanti99" target="_blank" rel="noopener" aria-label="Substack" title="Substack"><svg viewBox="0 0 24 24"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
             <a class="mail" href="mailto:sushanti@berkeley.edu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>sushanti@berkeley.edu</a>
           </nav>
+          <p class="hint">This site is themed after Portal&nbsp;2, which I finally finished after five years. Walk through the portal on the right to begin, or click any white panel to shoot your own.</p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="sec">
-        <h2 class="sec-label"><span class="n">01</span>Introduction</h2>
-        <div class="prose" data-stagger>
-          <p>I started out as a computer vision engineer and backend developer, back when that was the obvious path into ML. As the field shifted toward NLP, I shifted with it, moving into NLP backend work and MLOps, and from there into machine learning, human-AI simulation, and multi-agent orchestration. That's slowly pulled me toward more systemic and agentic AI, mixing in economics along the way, and more recently into interpretability.</p>
-          <p>I like building things I wish already existed, usually starting from something I&rsquo;ve run into in my own life. Right now I'm working on memory and personalization for agents: how they hold on to context, learn the person they're working with, and get better over time. Day to day, I work on applied AI at Adobe.</p>
-          <p>Before that, I worked across a handful of startups in India, then moved to Berkeley two years ago for my master's. It's been one of the best decisions I've made. California has given me a lot of nature and a lot of sun, and it turns out those might be two of the best things in life.</p>
-        </div>
-      </section>
+    <!-- Chamber 01 -->
+    <section class="room-content" id="about" data-room="about">
+      <div class="about">
+        <article class="screen solid">
+          <h2 class="screen-bar"><span>01.A</span>Introduction<i class="led"></i></h2>
+          <div class="screen-body prose">
+            <p>I started out as a computer vision engineer and backend developer, back when that was the obvious path into ML. As the field shifted toward NLP, I shifted with it, moving into NLP backend work and MLOps, and from there into machine learning, human-AI simulation, and multi-agent orchestration. That's slowly pulled me toward more systemic and agentic AI, mixing in economics along the way, and more recently into interpretability.</p>
+            <p>I like building things I wish already existed, usually starting from something I&rsquo;ve run into in my own life. Right now I'm working on memory and personalization for agents: how they hold on to context, learn the person they're working with, and get better over time. Day to day, I work on applied AI at Adobe.</p>
+            <p>Before that, I worked across a handful of startups in India, then moved to Berkeley two years ago for my master's. It's been one of the best decisions I've made. California has given me a lot of nature and a lot of sun, and it turns out those might be two of the best things in life.</p>
+          </div>
+        </article>
+        <article class="screen solid record">
+          <h2 class="screen-bar"><span>01.B</span>Test record<i class="led"></i></h2>
+          <ol class="cv screen-body">
+            <li>
+              <span class="cv-step">04</span>
+              <span class="cv-main"><span class="cv-role">Software Engineer</span><a class="cv-org" href="https://www.adobe.com/" target="_blank" rel="noopener"><img src="assets/img/logos/adobe.png" alt="" width="22" height="22">Adobe</a></span>
+              <span class="cv-years"><span class="live" aria-label="current"></span>2026 &ndash; Now</span>
+            </li>
+            <li>
+              <span class="cv-step">03</span>
+              <span class="cv-main"><span class="cv-role">Master&rsquo;s Degree</span><a class="cv-org" href="https://www.berkeley.edu/" target="_blank" rel="noopener"><img src="assets/img/logos/berkeley.png" alt="" width="22" height="22">UC Berkeley</a></span>
+              <span class="cv-years">2024 &ndash; 2026</span>
+            </li>
+            <li>
+              <span class="cv-step">02</span>
+              <span class="cv-main"><span class="cv-role">Software Developer</span><a class="cv-org" href="https://yellow.ai/" target="_blank" rel="noopener"><img src="assets/img/logos/yellow.png" alt="" width="22" height="22">Yellow.ai</a></span>
+              <span class="cv-years">2021 &ndash; 2024</span>
+            </li>
+            <li>
+              <span class="cv-step">01</span>
+              <span class="cv-main"><span class="cv-role">Member of Technical Staff</span><a class="cv-org" href="https://dragonfruit.ai/" target="_blank" rel="noopener"><img src="assets/img/logos/dragonfruit.png" alt="" width="22" height="22">Dragonfruit.ai</a></span>
+              <span class="cv-years">2020 &ndash; 2021</span>
+            </li>
+          </ol>
+          <p class="record-foot">Status: <b>testing ongoing</b></p>
+        </article>
+      </div>
+    </section>
 
-      <section class="sec">
-        <h2 class="sec-label"><span class="n">02</span>Experience &amp; Education</h2>
-        <ol class="cv" data-stagger>
-          <li>
-            <h3 class="cv-role">Software Engineer</h3>
-            <a class="cv-org" href="https://www.adobe.com/" target="_blank" rel="noopener"><img src="assets/img/logos/adobe.png" alt="" width="22" height="22">Adobe</a>
-            <span class="cv-years"><span class="live" aria-label="current"></span>2026 &ndash; Now</span>
-          </li>
-          <li>
-            <h3 class="cv-role">Master&rsquo;s Degree</h3>
-            <a class="cv-org" href="https://www.berkeley.edu/" target="_blank" rel="noopener"><img src="assets/img/logos/berkeley.png" alt="" width="22" height="22">UC Berkeley</a>
-            <span class="cv-years">2024 &ndash; 2026</span>
-          </li>
-          <li>
-            <h3 class="cv-role">Software Developer</h3>
-            <a class="cv-org" href="https://yellow.ai/" target="_blank" rel="noopener"><img src="assets/img/logos/yellow.png" alt="" width="22" height="22">Yellow.ai</a>
-            <span class="cv-years">2021 &ndash; 2024</span>
-          </li>
-          <li>
-            <h3 class="cv-role">Member of Technical Staff</h3>
-            <a class="cv-org" href="https://dragonfruit.ai/" target="_blank" rel="noopener"><img src="assets/img/logos/dragonfruit.png" alt="" width="22" height="22">Dragonfruit.ai</a>
-            <span class="cv-years">2020 &ndash; 2021</span>
-          </li>
-        </ol>
-      </section>
+    <!-- Chamber 02 -->
+    <section class="room-content" id="projects" data-room="projects">
+      <div class="projects">
+        <article class="card solid" id="civicsim">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <figure class="window"><img src="assets/img/projects/civicsim.jpg" alt="CivicSim" loading="lazy"></figure>
+              <div class="card-head">
+                <span class="mark mark--civic" aria-hidden="true"><svg viewBox="0 0 24 24"><g><circle cx="6" cy="6" r="1.6"/><circle cx="12" cy="6" r="1.6"/><circle cx="18" cy="6" r="1.6"/><circle cx="6" cy="12" r="1.6"/><circle class="hot" cx="12" cy="12" r="1.6"/><circle cx="18" cy="12" r="1.6"/><circle class="hot" cx="6" cy="18" r="1.6"/><circle cx="12" cy="18" r="1.6"/><circle class="hot" cx="18" cy="18" r="1.6"/></g></svg></span>
+                <h3>CivicSim</h3><span class="card-no">02.1</span>
+              </div>
+              <p class="card-lede">A synthetic U.S. electorate for stress-testing policy before it meets the public.</p>
+              <ul class="meta"><li><b>Type</b>Research, simulation</li><li><b>Data</b>ACS microdata, Pew ATP</li></ul>
+              <div class="card-actions"><button class="flip" type="button">How it works</button><a href="https://civicsim.xyz/" target="_blank" rel="noopener">civicsim.xyz &#8599;</a></div>
+            </div>
+            <div class="card-face card-back">
+              <h3>CivicSim</h3>
+              <div class="prose">
+                <p>Agents are instantiated from American Community Survey microdata and conditioned on demographic-opinion distributions from the Pew American Trends Panel. The aim is a synthetic electorate whose opinions track the real U.S. adult population, one demographic cell at a time.</p>
+                <p>Experiments benchmark demographic alignment between the census and survey corpora, and test how well opinions transfer across geographies.</p>
+                <p>The thesis: realistic policy simulation needs grounding in real population data, not just model scale.</p>
+              </div>
+              <div class="card-actions"><button class="flip" type="button">&larr; Back</button><a href="https://civicsim.xyz/" target="_blank" rel="noopener">Visit &#8599;</a></div>
+            </div>
+          </div>
+        </article>
 
-      <section class="sec">
-        <h2 class="sec-label"><span class="n">03</span>Projects</h2>
-        <div>
-          <ul class="index" data-peek-list data-stagger>
-          <li>
-            <a href="projects.html#civicsim" data-peek="assets/img/projects/civicsim.jpg">
-              <span class="mark mark--civic" aria-hidden="true"><svg viewBox="0 0 24 24"><g><circle cx="6" cy="6" r="1.6"/><circle cx="12" cy="6" r="1.6"/><circle cx="18" cy="6" r="1.6"/><circle cx="6" cy="12" r="1.6"/><circle class="hot" cx="12" cy="12" r="1.6"/><circle cx="18" cy="12" r="1.6"/><circle class="hot" cx="6" cy="18" r="1.6"/><circle cx="12" cy="18" r="1.6"/><circle class="hot" cx="18" cy="18" r="1.6"/></g></svg></span>
-              <span class="p-name">CivicSim</span>
-              <span class="p-desc">A synthetic U.S. electorate for stress-testing policy.</span>
-              <span class="p-go" aria-hidden="true">&rarr;</span>
-            </a>
-          </li>
-          <li>
-            <a href="projects.html#brainsquared" data-peek="assets/img/projects/brainsquared.jpg">
-              <span class="mark mark--brain" aria-hidden="true">b<span class="sq">2</span></span>
-              <span class="p-name">BrainSquared</span>
-              <span class="p-desc">One local agent for every app you use.</span>
-              <span class="p-go" aria-hidden="true">&rarr;</span>
-            </a>
-          </li>
-          <li>
-            <a href="projects.html#brb" data-peek="assets/img/projects/brb.jpg">
-              <span class="mark mark--brb" aria-hidden="true">brb<i></i></span>
-              <span class="p-name">brb</span>
-              <span class="p-desc">A break while Claude Code works, and a callback when it&rsquo;s done.</span>
-              <span class="p-go" aria-hidden="true">&rarr;</span>
-            </a>
-          </li>
-          </ul>
-          <a class="more u rise" href="projects.html">All projects &rarr;</a>
-        </div>
-      </section>
-    </main>
+        <article class="card solid" id="brainsquared">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <figure class="window"><img src="assets/img/projects/brainsquared.jpg" alt="BrainSquared" loading="lazy"></figure>
+              <div class="card-head">
+                <span class="mark mark--brain" aria-hidden="true">b<span class="sq">2</span></span>
+                <h3>BrainSquared</h3><span class="card-no">02.2</span>
+              </div>
+              <p class="card-lede">One interface for every app you use, run by an agent that knows your context.</p>
+              <ul class="meta"><li><b>Type</b>Open source, Mac app</li><li><b>Built on</b>Obsidian, Claude Code</li></ul>
+              <div class="card-actions"><button class="flip" type="button">How it works</button><a href="https://brainsquared.xyz/" target="_blank" rel="noopener">brainsquared.xyz &#8599;</a></div>
+            </div>
+            <div class="card-face card-back">
+              <h3>BrainSquared</h3>
+              <div class="prose">
+                <p>Most of a day goes to context-switching: Gmail, then Slack, then Notion, the calendar, a GitHub PR, and around again. Each app only knows its own slice.</p>
+                <p>BrainSquared connects them into a living knowledge base, a single Obsidian vault that an LLM keeps up to date like a wiki rather than a data dump. It surfaces what needs your attention, drafts replies in your voice, and closes tasks back into markdown.</p>
+                <p>Everything runs locally. There&rsquo;s no cloud middleman, and your data stays yours.</p>
+              </div>
+              <div class="card-actions"><button class="flip" type="button">&larr; Back</button><a href="https://github.com/Sushanti99/BrainSquared" target="_blank" rel="noopener">GitHub &#8599;</a></div>
+            </div>
+          </div>
+        </article>
 
-    <footer class="foot">
-      <span>&copy; 2026 Sushanti</span>
-      <a class="u" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top &uarr;</a>
-    </footer>
+        <article class="card solid" id="brb">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <figure class="window"><img src="assets/img/projects/brb.jpg" alt="brb" loading="lazy"></figure>
+              <div class="card-head">
+                <span class="mark mark--brb" aria-hidden="true">brb<i></i></span>
+                <h3>brb</h3><span class="card-no">02.3</span>
+              </div>
+              <p class="card-lede">Take a break while Claude Code works. Get called back the moment it&rsquo;s done.</p>
+              <ul class="meta"><li><b>Type</b>Claude Code plugin</li><li><b>Runs on</b>macOS, plain bash</li></ul>
+              <div class="card-actions"><button class="flip" type="button">How it works</button><a href="https://usebrb.github.io/#what" target="_blank" rel="noopener">usebrb.github.io &#8599;</a></div>
+            </div>
+            <div class="card-face card-back">
+              <h3>brb</h3>
+              <div class="prose">
+                <p>brb hangs off Claude Code&rsquo;s own lifecycle hooks: no AI, no polling, no terminal scraping. When a turn runs long enough to be worth leaving, it offers a break and a short list of places to go on purpose.</p>
+                <p>When Claude finishes, brb checks whether you actually left and whether the turn earned a callback, then brings you back.</p>
+                <p>An optional menu bar app draws the panel and the callback natively, and keeps a running count of the turn.</p>
+              </div>
+              <div class="card-actions"><button class="flip" type="button">&larr; Back</button><a href="https://github.com/usebrb/brb" target="_blank" rel="noopener">GitHub &#8599;</a></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
 
-  </div>
-  <script src="assets/js/motion.js"></script>
+    <!-- Chamber 03 -->
+    <section class="room-content" id="books" data-room="books">
+      <div class="library">
+        <article class="screen solid reading">
+          <h2 class="screen-bar"><span>03.A</span>Currently reading<i class="led"></i></h2>
+          <div class="screen-body">
+            <div class="covers">
+              <div class="book3d b-hard" tabindex="0">
+                <div class="b3-cover"><span class="b3-title">The Hard Thing About Hard Things</span><span class="b3-author">Ben Horowitz</span></div>
+                <div class="b3-spine"></div>
+              </div>
+              <div class="book3d b-sand" tabindex="0">
+                <div class="b3-cover"><span class="b3-title">Secrets of Sand Hill Road</span><span class="b3-author">Scott Kupor</span></div>
+                <div class="b3-spine"></div>
+              </div>
+            </div>
+            <p class="finished"><span class="badge">Just finished</span><b>Greenlights</b> Matthew McConaughey</p>
+          </div>
+        </article>
+
+        <article class="screen solid shelves">
+          <h2 class="screen-bar"><span>03.B</span>On the shelf<i class="led"></i></h2>
+          <div class="screen-body">
+            <div class="tabs" role="tablist" aria-label="Shelves">
+              <button type="button" role="tab" data-shelf="fiction" aria-selected="true">Fiction</button>
+              <button type="button" role="tab" data-shelf="memoir" aria-selected="false">Memoir</button>
+              <button type="button" role="tab" data-shelf="ideas" aria-selected="false">Ideas</button>
+              <button type="button" role="tab" data-shelf="building" aria-selected="false">Building</button>
+            </div>
+
+            <ul class="books" data-shelf="fiction" role="tabpanel">
+              <li><span class="b-title">One Hundred Years of Solitude</span><span class="b-author">Gabriel Garc&iacute;a M&aacute;rquez</span></li>
+              <li><span class="b-title">The Dream of a Ridiculous Man</span><span class="b-author">Fyodor Dostoevsky</span></li>
+              <li><span class="b-title">1984</span><span class="b-author">George Orwell</span></li>
+              <li><span class="b-title">Little Women</span><span class="b-author">Louisa May Alcott</span></li>
+              <li><span class="b-title">A Thousand Splendid Suns</span><span class="b-author">Khaled Hosseini</span></li>
+              <li><span class="b-title">Eleven Minutes</span><span class="b-author">Paulo Coelho</span></li>
+              <li><span class="b-title">Normal People</span><span class="b-author">Sally Rooney</span></li>
+              <li><span class="b-title">The Martian</span><span class="b-author">Andy Weir</span></li>
+            </ul>
+
+            <ul class="books" data-shelf="memoir" role="tabpanel">
+              <li class="new"><span class="b-title">Greenlights</span><span class="b-author">Matthew McConaughey</span></li>
+              <li><span class="b-title">Just Kids</span><span class="b-author">Patti Smith</span></li>
+              <li><span class="b-title">Man&rsquo;s Search for Meaning</span><span class="b-author">Viktor E. Frankl</span></li>
+              <li><span class="b-title">Tuesdays with Morrie</span><span class="b-author">Mitch Albom</span></li>
+              <li><span class="b-title">Shoe Dog</span><span class="b-author">Phil Knight</span></li>
+            </ul>
+
+            <ul class="books" data-shelf="ideas" role="tabpanel">
+              <li><span class="b-title">Range</span><span class="b-author">David Epstein</span></li>
+              <li><span class="b-title">The Fabric of Reality</span><span class="b-author">David Deutsch</span></li>
+              <li><span class="b-title">Beyond Good and Evil</span><span class="b-author">Friedrich Nietzsche</span></li>
+              <li><span class="b-title">Antifragile</span><span class="b-author">Nassim Nicholas Taleb</span></li>
+              <li><span class="b-title">Thinking, Fast and Slow</span><span class="b-author">Daniel Kahneman</span></li>
+              <li><span class="b-title">Sapiens</span><span class="b-author">Yuval Noah Harari</span></li>
+              <li><span class="b-title">Why Nations Fail</span><span class="b-author">Daron Acemo&#287;lu &amp; James Robinson</span></li>
+              <li><span class="b-title">Technofeudalism</span><span class="b-author">Yanis Varoufakis</span></li>
+              <li><span class="b-title">The Body Keeps the Score</span><span class="b-author">Bessel van der Kolk</span></li>
+              <li><span class="b-title">The Courage to Be Disliked</span><span class="b-author">Ichiro Kishimi &amp; Fumitake Koga</span></li>
+              <li><span class="b-title">As a Man Thinketh</span><span class="b-author">James Allen</span></li>
+            </ul>
+
+            <ul class="books" data-shelf="building" role="tabpanel">
+              <li><span class="b-title">Hackers &amp; Painters</span><span class="b-author">Paul Graham</span></li>
+              <li><span class="b-title">Zero to One</span><span class="b-author">Peter Thiel</span></li>
+              <li><span class="b-title">The Minimalist Entrepreneur</span><span class="b-author">Sahil Lavingia</span></li>
+              <li><span class="b-title">No Rules Rules</span><span class="b-author">Reed Hastings &amp; Erin Meyer</span></li>
+              <li><span class="b-title">Principles: Life and Work</span><span class="b-author">Ray Dalio</span></li>
+              <li><span class="b-title">The Almanack of Naval Ravikant</span><span class="b-author">Eric Jorgenson</span></li>
+              <li><span class="b-title">Deep Work</span><span class="b-author">Cal Newport</span></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="caption" aria-live="polite"><b>Announcer</b><span class="caption-text"></span></div>
+
+
+  <noscript><style>#content{display:block}</style></noscript>
+  <script src="assets/js/chamber.js"></script>
 </body>
 </html>
