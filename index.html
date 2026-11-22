@@ -155,7 +155,9 @@
 
     <!-- Chamber 02 -->
     <section class="room-content" id="projects" data-room="projects">
-      <div class="projects">
+      <div class="carousel">
+        <button class="car-btn car-prev solid" type="button" aria-label="Previous project"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5.5 8 12l6.5 6.5"/></svg></button>
+        <div class="projects">
         <article class="card solid" id="civicsim">
           <div class="card-inner">
             <div class="card-face card-front">
@@ -227,6 +229,13 @@
             </div>
           </div>
         </article>
+        </div>
+        <button class="car-btn car-next solid" type="button" aria-label="Next project"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5.5 16 12l-6.5 6.5"/></svg></button>
+        <div class="car-dots solid" role="group" aria-label="Choose a project">
+          <button type="button" data-i="0" aria-label="CivicSim"></button>
+          <button type="button" data-i="1" aria-label="BrainSquared"></button>
+          <button type="button" data-i="2" aria-label="brb"></button>
+        </div>
       </div>
     </section>
 

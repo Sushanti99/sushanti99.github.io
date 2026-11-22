@@ -1276,3 +1276,91 @@ html:not(.js) .caption { display: none; }
 /* dark back wall + dithered intro */
 .opening.out canvas.sky { opacity: 0; transition: opacity 0.55s ease; }
 .dock-portal { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16); }
+
+/* ------------------------------------------------------------------ projects carousel */
+
+.carousel {
+  position: relative;
+  height: 84cqh;
+  max-width: 76rem;
+  margin: 0 auto;
+}
+
+.carousel .projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  width: min(40cqw, 30rem);
+  height: calc(100% - 2.4rem);
+  max-width: none;
+  margin: 0 auto;
+}
+
+.projects .card {
+  grid-area: 1 / 1;
+  transition: transform 0.55s var(--ease), opacity 0.4s ease, filter 0.4s ease;
+}
+.projects .card.is-current { z-index: 2; }
+.projects .card.is-prev,
+.projects .card.is-next { z-index: 1; opacity: 0.42; filter: grayscale(0.5); cursor: pointer; }
+.projects .card.is-prev { transform: translateX(-72%) scale(0.8); }
+.projects .card.is-next { transform: translateX(72%) scale(0.8); }
+.projects .card.is-prev:hover,
+.projects .card.is-next:hover { opacity: 0.7; }
+.projects .card:not(.is-current):not(.is-prev):not(.is-next) { opacity: 0; pointer-events: none; }
+
+.car-btn {
+  --c: var(--orange);
+  position: absolute;
+  z-index: 3;
+  top: calc(50% - 1.2rem);
+  left: calc(50% - min(20cqw, 15rem) - 23px);
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--paper);
+  cursor: pointer;
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 3px var(--c), 0 0 18px var(--c), 0 8px 18px -8px rgba(0, 0, 0, 0.7);
+  transition: transform 0.35s var(--spring);
+}
+.car-next { --c: var(--blue); left: calc(50% + min(20cqw, 15rem) - 23px); }
+.car-btn:hover { transform: translateY(-50%) scale(1.1); }
+.car-btn:active { transform: translateY(-50%) scale(0.95); }
+.car-btn svg { width: 20px; height: 20px; fill: none; stroke: var(--ink); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+
+.car-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 0.4rem;
+  display: flex;
+  gap: 0.5rem;
+  transform: translateX(-50%);
+}
+.car-dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: width 0.3s var(--ease), background 0.3s ease;
+}
+.car-dots button:hover { background: rgba(255, 255, 255, 0.6); }
+.car-dots button[aria-current="true"] { width: 26px; background: #fff; }
+
+@media (max-width: 719px), (max-height: 479px) {
+  .carousel { height: auto; padding-bottom: 3.6rem; }
+  .carousel .projects { width: 100%; height: auto; }
+  .projects .card.is-prev,
+  .projects .card.is-next { transform: none; opacity: 0; visibility: hidden; pointer-events: none; }
+  .car-btn { top: auto; bottom: 0; left: 0; transform: none; }
+  .car-next { left: auto; right: 0; }
+  .car-btn:hover, .car-btn:active { transform: none; }
+  .car-dots { bottom: 19px; }
+}

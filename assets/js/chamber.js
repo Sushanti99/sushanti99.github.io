@@ -757,6 +757,13 @@
     var t = e.target;
     if (!t.closest) return;
 
+    var side = t.closest('.card.is-prev, .card.is-next');
+    if (side) { e.preventDefault(); showProject(projectCards().indexOf(side)); return; }
+    if (t.closest('.car-prev')) { showProject(carIndex - 1); return; }
+    if (t.closest('.car-next')) { showProject(carIndex + 1); return; }
+    var dot = t.closest('.car-dots [data-i]');
+    if (dot) { showProject(+dot.dataset.i); return; }
+
     var go = t.closest('[data-go]');
     if (go) {
       if (e.metaKey || e.ctrlKey || e.shiftKey) return;
@@ -790,6 +797,32 @@
     if (!t.closest('.stage') || busy) return;
     if (String(window.getSelection ? window.getSelection() : '')) return;
     shoot(e.clientX, e.clientY);
+  });
+
+  // Projects: one card at a time, neighbours peeking either side.
+  var carIndex = 0;
+  function projectCards() { return Array.prototype.slice.call(document.querySelectorAll('.projects .card')); }
+  function showProject(i) {
+    var cards = projectCards(), n = cards.length;
+    if (!n) return;
+    carIndex = (i % n + n) % n;
+    cards.forEach(function (c, k) {
+      var rel = (k - carIndex + n) % n;
+      c.classList.toggle('is-current', rel === 0);
+      c.classList.toggle('is-next', rel === 1);
+      c.classList.toggle('is-prev', rel === n - 1 && n > 2);
+      c.setAttribute('aria-hidden', rel === 0 ? 'false' : 'true');
+    });
+    document.querySelectorAll('.car-dots [data-i]').forEach(function (d) {
+      d.setAttribute('aria-current', +d.dataset.i === carIndex ? 'true' : 'false');
+    });
+  }
+  showProject(0);
+
+  document.addEventListener('keydown', function (e) {
+    if (current !== 'projects' || busy || e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.key === 'ArrowRight') { showProject(carIndex + 1); e.preventDefault(); }
+    else if (e.key === 'ArrowLeft') { showProject(carIndex - 1); e.preventDefault(); }
   });
 
   function showShelf(name) {
@@ -842,6 +875,11 @@
   } catch (err) { first = true; }
 
   var startKey = routeKey();
+  (function () {
+    var t = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    var i = t ? projectCards().indexOf(t) : -1;
+    if (i > -1) showProject(i);
+  })();
   var opening = document.querySelector('.opening');
   var forceIntro = /[?&]intro\b/.test(location.search);
   if ((first || forceIntro) && startKey === 'lobby' && opening) {
