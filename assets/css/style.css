@@ -479,92 +479,64 @@ canvas.sky {
   height: 84cqh;
 }
 
-.card { perspective: 1400px; background: transparent; min-height: 0; }
-
-.card-inner {
-  position: relative;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.85s var(--spring);
+.card {
+  padding: 10px 10px 0;
+  background: var(--paper);
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.07), 0 3px 0 #b9bfc4, 0 28px 44px -26px rgba(0, 0, 0, 0.6);
 }
-.card.flipped .card-inner { transform: rotateY(180deg); }
 
-.card-face {
-  position: absolute;
-  inset: 0;
+.poster {
+  position: relative;
+  aspect-ratio: 5 / 4;
+  max-height: 56cqh;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 0.7rem 0.7rem 0.85rem;
-  background: var(--paper);
-  border-radius: 6px;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.07), 0 3px 0 #b9bfc4, 0 28px 44px -26px rgba(0, 0, 0, 0.55);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  overflow: hidden;
-}
-.card-back { transform: rotateY(180deg); padding: 1.1rem 1.15rem 0.95rem; }
-
-.window {
-  margin: 0;
-  flex: 1 1 auto;
-  min-height: 60px;
-  max-height: 42%;
-  position: relative;
+  justify-content: space-between;
+  padding: 1.1rem 1.2rem 1.2rem;
   border-radius: 4px;
   overflow: hidden;
-  background: var(--metal-b);
-  box-shadow: inset 0 0 0 5px var(--metal-b);
-}
-.window img { width: 100%; height: 100%; object-fit: cover; display: block; padding: 5px; border-radius: 8px; transition: transform 1.2s var(--ease); }
-.window::after { content: ""; position: absolute; inset: 5px; border-radius: 3px; background: linear-gradient(115deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0) 40%); pointer-events: none; }
-.card:hover .window img { transform: scale(1.04); }
-
-.card-head { display: flex; align-items: center; gap: 0.6rem; margin: 0.8rem 0.25rem 0.35rem; }
-.card-head h3, .card-back h3 { font-family: var(--cond); font-weight: 700; font-size: clamp(1.3rem, 4.2cqh, 1.75rem); line-height: 1; margin: 0; }
-.card-back h3 { margin-bottom: 0.7rem; }
-.card-no { margin-left: auto; font-family: var(--mono); font-size: 0.7rem; color: var(--soft); }
-.card-lede { margin: 0 0.25rem 0.6rem; font-size: clamp(0.88rem, 2.6cqh, 1.02rem); line-height: 1.38; }
-
-.meta { list-style: none; margin: 0 0.25rem; padding: 0; display: grid; gap: 0.2rem; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.03em; text-transform: uppercase; color: var(--mid); }
-.meta b { color: var(--soft); font-weight: 400; margin-right: 0.5em; }
-
-.card-actions { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; margin: auto 0.25rem 0; padding-top: 0.7rem; }
-.card-actions a { font-family: var(--mono); font-size: 0.74rem; text-decoration: none; color: var(--mid); border-bottom: 1px solid var(--rule); }
-.card-actions a:hover { color: var(--ink); border-color: var(--blue); }
-
-.flip {
-  border: 0;
-  cursor: pointer;
-  padding: 0.5rem 0.8rem;
-  border-radius: 4px;
-  background: var(--metal-b);
   color: #fff;
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  box-shadow: 0 2px 0 #000;
-  transition: background 0.25s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  background:
+    radial-gradient(ellipse 120% 90% at 15% 0%, rgba(255, 255, 255, 0.14), transparent 60%),
+    var(--bg);
 }
-.flip:hover { background: var(--blue); }
-.card:nth-child(2) .flip:hover { background: var(--orange); }
-.flip:active { transform: translateY(2px); box-shadow: 0 0 0 #000; }
 
-.card-back .prose { overflow: auto; font-size: clamp(0.85rem, 2.45cqh, 0.98rem); line-height: 1.55; padding-right: 0.3rem; }
+.poster-no {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+}
 
-/* project marks (carried over) */
-.mark { width: 32px; height: 32px; border-radius: 7px; display: grid; place-items: center; flex-shrink: 0; box-shadow: inset 0 0 0 1px var(--rule); }
-.mark--civic { background: #eef1f8; }
-.mark--civic svg { width: 19px; height: 19px; fill: #a9b4cc; }
-.mark--civic .hot { fill: #3553d6; }
-.card:hover .mark--civic .hot { animation: poll 1.1s ease-in-out infinite alternate; }
-.mark--civic .hot:nth-child(7) { animation-delay: 0.2s !important; }
-.mark--civic .hot:nth-child(9) { animation-delay: 0.4s !important; }
-@keyframes poll { to { fill: #a9b4cc; } }
-.mark--brain { background: #f3f2ec; color: #111; font-family: "Kalam", cursive; font-weight: 700; font-size: 1.1rem; line-height: 1; display: flex; justify-content: center; align-items: center; padding-top: 0.15rem; }
-.mark--brain .sq { font-size: 0.55em; align-self: flex-start; margin: 0.35rem 0 0 1px; }
-.mark--brb { background: #7b61ff; color: #111; font-family: var(--mono); font-size: 0.6rem; font-weight: 500; display: flex; justify-content: center; align-items: center; gap: 1px; }
-.mark--brb i { width: 3px; height: 9px; background: #111; animation: blink 1.1s steps(1) infinite; }
+.poster-link {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.poster-link:hover { color: #fff; border-color: #fff; }
+
+.poster h3 {
+  margin: 0;
+  font-size: clamp(2rem, min(9cqh, 5.4cqw), 3.4rem);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+  overflow-wrap: anywhere;
+}
+
+.card-intro {
+  margin: 0;
+  padding: 0.85rem 0.35rem 1rem;
+  font-size: 0.98rem;
+  line-height: 1.45;
+  color: var(--mid);
+}
 
 /* ------------------------------------------------------------------ books */
 
@@ -1028,17 +1000,6 @@ canvas.sky {
   .lede { font-size: 1.1rem; }
   .about .prose { font-size: 1rem; }
 
-  .card { height: auto; perspective: none; }
-  .card-inner { height: auto; display: grid; }
-  .card-face { position: relative; inset: auto; grid-area: 1 / 1; }
-  .card.flipped .card-inner { transform: none; }
-  .card .card-back { transform: none; display: none; }
-  .card.flipped .card-front { display: none; }
-  .card.flipped .card-back { display: flex; }
-  .window { max-height: none; aspect-ratio: 16 / 10; flex: none; }
-  .card-head h3, .card-back h3 { font-size: 1.6rem; }
-  .card-lede { font-size: 1rem; }
-  .card-back .prose { font-size: 0.98rem; }
 
   .books { grid-template-columns: 1fr; }
   .b3-title { font-size: 1.1rem; }
@@ -1051,7 +1012,6 @@ canvas.sky {
 html:not(.js) #content { max-width: 60rem; margin: 0 auto; padding: 5rem 1rem; background: var(--paper); }
 html:not(.js) body { background: var(--wall-b); }
 html:not(.js) #content > section { margin-bottom: 3rem; }
-html:not(.js) .card-face { position: relative; }
 html:not(.js) .caption { display: none; }
 
 /* ------------------------------------------------------------------ misc keyframes */
@@ -1256,7 +1216,7 @@ html:not(.js) .caption { display: none; }
 .hud-room { font-family: var(--mono); font-size: 0.78rem; }
 .screen-bar { font-family: var(--sans); font-size: 0.95rem; font-weight: 600; letter-spacing: -0.01em; text-transform: none; }
 .screen-bar span { font-family: var(--mono); font-size: 0.75rem; font-weight: 400; }
-.flip, .tabs button, .opening-cta, .skip, .card-actions a {
+.tabs button, .opening-cta, .skip {
   font-family: var(--sans);
   font-size: 0.85rem;
   letter-spacing: -0.005em;
@@ -1265,7 +1225,6 @@ html:not(.js) .caption { display: none; }
 .opening-cta { font-size: 0.95rem; padding: 0.65rem 1.25rem; }
 .lobby h1 { font-weight: 600; letter-spacing: -0.045em; line-height: 1; }
 .note-text { font-weight: 600; letter-spacing: -0.035em; line-height: 1.12; }
-.card-head h3, .card-back h3 { font-weight: 600; letter-spacing: -0.025em; }
 .wall-label { font-weight: 600; letter-spacing: -0.02em; text-transform: none; }
 .tip { font-weight: 600; font-size: 0.95rem; letter-spacing: -0.01em; text-transform: none; }
 .cv-step { font-weight: 600; letter-spacing: -0.04em; font-size: 1.45rem; }
@@ -1281,7 +1240,7 @@ html:not(.js) .caption { display: none; }
 
 .carousel {
   position: relative;
-  height: 84cqh;
+  padding-bottom: 2.4rem;
   max-width: 76rem;
   margin: 0 auto;
 }
@@ -1290,8 +1249,8 @@ html:not(.js) .caption { display: none; }
   display: grid;
   grid-template-columns: 1fr;
   gap: 0;
-  width: min(40cqw, 30rem);
-  height: calc(100% - 2.4rem);
+  width: min(40cqw, 26rem);
+  height: auto;
   max-width: none;
   margin: 0 auto;
 }
@@ -1314,7 +1273,7 @@ html:not(.js) .caption { display: none; }
   position: absolute;
   z-index: 3;
   top: calc(50% - 1.2rem);
-  left: calc(50% - min(20cqw, 15rem) - 23px);
+  left: calc(50% - min(20cqw, 13rem) - 23px);
   width: 46px;
   height: 46px;
   display: grid;
@@ -1328,7 +1287,7 @@ html:not(.js) .caption { display: none; }
   box-shadow: 0 0 0 3px var(--c), 0 0 18px var(--c), 0 8px 18px -8px rgba(0, 0, 0, 0.7);
   transition: transform 0.35s var(--spring);
 }
-.car-next { --c: var(--blue); left: calc(50% + min(20cqw, 15rem) - 23px); }
+.car-next { --c: var(--blue); left: calc(50% + min(20cqw, 13rem) - 23px); }
 .car-btn:hover { transform: translateY(-50%) scale(1.1); }
 .car-btn:active { transform: translateY(-50%) scale(0.95); }
 .car-btn svg { width: 20px; height: 20px; fill: none; stroke: var(--ink); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
@@ -1355,7 +1314,7 @@ html:not(.js) .caption { display: none; }
 .car-dots button[aria-current="true"] { width: 26px; background: #fff; }
 
 @media (max-width: 719px), (max-height: 479px) {
-  .carousel { height: auto; padding-bottom: 3.6rem; }
+  .carousel { padding-bottom: 3.6rem; }
   .carousel .projects { width: 100%; height: auto; }
   .projects .card.is-prev,
   .projects .card.is-next { transform: none; opacity: 0; visibility: hidden; pointer-events: none; }

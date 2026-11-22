@@ -8,7 +8,7 @@
   <link rel="icon" href="assets/img/avatar.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400;500&family=Kalam:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -158,77 +158,32 @@
       <div class="carousel">
         <button class="car-btn car-prev solid" type="button" aria-label="Previous project"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5.5 8 12l6.5 6.5"/></svg></button>
         <div class="projects">
-        <article class="card solid" id="civicsim">
-          <div class="card-inner">
-            <div class="card-face card-front">
-              <figure class="window"><img src="assets/img/projects/civicsim.jpg" alt="CivicSim" loading="lazy"></figure>
-              <div class="card-head">
-                <span class="mark mark--civic" aria-hidden="true"><svg viewBox="0 0 24 24"><g><circle cx="6" cy="6" r="1.6"/><circle cx="12" cy="6" r="1.6"/><circle cx="18" cy="6" r="1.6"/><circle cx="6" cy="12" r="1.6"/><circle class="hot" cx="12" cy="12" r="1.6"/><circle cx="18" cy="12" r="1.6"/><circle class="hot" cx="6" cy="18" r="1.6"/><circle cx="12" cy="18" r="1.6"/><circle class="hot" cx="18" cy="18" r="1.6"/></g></svg></span>
-                <h3>CivicSim</h3><span class="card-no">02.1</span>
-              </div>
-              <p class="card-lede">A synthetic U.S. electorate for stress-testing policy before it meets the public.</p>
-              <ul class="meta"><li><b>Type</b>Research, simulation</li><li><b>Data</b>ACS microdata, Pew ATP</li></ul>
-              <div class="card-actions"><button class="flip" type="button">How it works</button><a href="https://civicsim.xyz/" target="_blank" rel="noopener">civicsim.xyz &#8599;</a></div>
-            </div>
-            <div class="card-face card-back">
+          <article class="card solid" id="civicsim">
+            <div class="poster" style="--bg: #3046c9">
+              <span class="poster-no">01</span>
+              <a class="poster-link" href="https://civicsim.xyz/" target="_blank" rel="noopener">civicsim.xyz &#8599;</a>
               <h3>CivicSim</h3>
-              <div class="prose">
-                <p>Agents are instantiated from American Community Survey microdata and conditioned on demographic-opinion distributions from the Pew American Trends Panel. The aim is a synthetic electorate whose opinions track the real U.S. adult population, one demographic cell at a time.</p>
-                <p>Experiments benchmark demographic alignment between the census and survey corpora, and test how well opinions transfer across geographies.</p>
-                <p>The thesis: realistic policy simulation needs grounding in real population data, not just model scale.</p>
-              </div>
-              <div class="card-actions"><button class="flip" type="button">&larr; Back</button><a href="https://civicsim.xyz/" target="_blank" rel="noopener">Visit &#8599;</a></div>
             </div>
-          </div>
-        </article>
+            <p class="card-intro">A synthetic U.S. electorate for stress-testing policy before it meets the public.</p>
+          </article>
 
-        <article class="card solid" id="brainsquared">
-          <div class="card-inner">
-            <div class="card-face card-front">
-              <figure class="window"><img src="assets/img/projects/brainsquared.jpg" alt="BrainSquared" loading="lazy"></figure>
-              <div class="card-head">
-                <span class="mark mark--brain" aria-hidden="true">b<span class="sq">2</span></span>
-                <h3>BrainSquared</h3><span class="card-no">02.2</span>
-              </div>
-              <p class="card-lede">One interface for every app you use, run by an agent that knows your context.</p>
-              <ul class="meta"><li><b>Type</b>Open source, Mac app</li><li><b>Built on</b>Obsidian, Claude Code</li></ul>
-              <div class="card-actions"><button class="flip" type="button">How it works</button><a href="https://brainsquared.xyz/" target="_blank" rel="noopener">brainsquared.xyz &#8599;</a></div>
-            </div>
-            <div class="card-face card-back">
+          <article class="card solid" id="brainsquared">
+            <div class="poster" style="--bg: #1f5a45">
+              <span class="poster-no">02</span>
+              <a class="poster-link" href="https://brainsquared.xyz/" target="_blank" rel="noopener">brainsquared.xyz &#8599;</a>
               <h3>BrainSquared</h3>
-              <div class="prose">
-                <p>Most of a day goes to context-switching: Gmail, then Slack, then Notion, the calendar, a GitHub PR, and around again. Each app only knows its own slice.</p>
-                <p>BrainSquared connects them into a living knowledge base, a single Obsidian vault that an LLM keeps up to date like a wiki rather than a data dump. It surfaces what needs your attention, drafts replies in your voice, and closes tasks back into markdown.</p>
-                <p>Everything runs locally. There&rsquo;s no cloud middleman, and your data stays yours.</p>
-              </div>
-              <div class="card-actions"><button class="flip" type="button">&larr; Back</button><a href="https://github.com/Sushanti99/BrainSquared" target="_blank" rel="noopener">GitHub &#8599;</a></div>
             </div>
-          </div>
-        </article>
+            <p class="card-intro">One local agent for every app you use, keeping your context in a single Obsidian vault.</p>
+          </article>
 
-        <article class="card solid" id="brb">
-          <div class="card-inner">
-            <div class="card-face card-front">
-              <figure class="window"><img src="assets/img/projects/brb.jpg" alt="brb" loading="lazy"></figure>
-              <div class="card-head">
-                <span class="mark mark--brb" aria-hidden="true">brb<i></i></span>
-                <h3>brb</h3><span class="card-no">02.3</span>
-              </div>
-              <p class="card-lede">Take a break while Claude Code works. Get called back the moment it&rsquo;s done.</p>
-              <ul class="meta"><li><b>Type</b>Claude Code plugin</li><li><b>Runs on</b>macOS, plain bash</li></ul>
-              <div class="card-actions"><button class="flip" type="button">How it works</button><a href="https://usebrb.github.io/#what" target="_blank" rel="noopener">usebrb.github.io &#8599;</a></div>
-            </div>
-            <div class="card-face card-back">
+          <article class="card solid" id="brb">
+            <div class="poster" style="--bg: #6a52e8">
+              <span class="poster-no">03</span>
+              <a class="poster-link" href="https://usebrb.github.io/" target="_blank" rel="noopener">usebrb.github.io &#8599;</a>
               <h3>brb</h3>
-              <div class="prose">
-                <p>brb hangs off Claude Code&rsquo;s own lifecycle hooks: no AI, no polling, no terminal scraping. When a turn runs long enough to be worth leaving, it offers a break and a short list of places to go on purpose.</p>
-                <p>When Claude finishes, brb checks whether you actually left and whether the turn earned a callback, then brings you back.</p>
-                <p>An optional menu bar app draws the panel and the callback natively, and keeps a running count of the turn.</p>
-              </div>
-              <div class="card-actions"><button class="flip" type="button">&larr; Back</button><a href="https://github.com/usebrb/brb" target="_blank" rel="noopener">GitHub &#8599;</a></div>
             </div>
-          </div>
-        </article>
+            <p class="card-intro">Take a break while Claude Code works, and get called back the moment it&rsquo;s done.</p>
+          </article>
         </div>
         <button class="car-btn car-next solid" type="button" aria-label="Next project"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5.5 16 12l-6.5 6.5"/></svg></button>
         <div class="car-dots solid" role="group" aria-label="Choose a project">

@@ -80,7 +80,6 @@
       'That is the subject. She is considerably friendlier than this announcer.',
       'Portal colour adjusted. The subject remains unchanged.'
     ],
-    flip: 'Card flipped. The other side has more words on it. That is how cards work.',
     clear: 'Portals closed. Your portal device is ready.',
     nothing: 'You have no portals to close. Click a white panel first.'
   };
@@ -779,16 +778,6 @@
 
     var face = t.closest('.portrait');
     if (face) { face.classList.toggle('is-orange'); say(pickOne(SAY.face)); return; }
-
-    var flip = t.closest('.flip');
-    if (flip) {
-      var card = flip.closest('.card');
-      card.classList.toggle('flipped');
-      var front = card.querySelector('.card-front'), backF = card.querySelector('.card-back');
-      front.setAttribute('aria-hidden', card.classList.contains('flipped'));
-      backF.setAttribute('aria-hidden', !card.classList.contains('flipped'));
-      return;
-    }
 
     var tab = t.closest('.tabs [data-shelf]');
     if (tab) { showShelf(tab.dataset.shelf); return; }
