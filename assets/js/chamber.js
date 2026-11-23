@@ -48,7 +48,7 @@
       'You have returned to the subject’s history. It has not changed. History rarely does.'
     ],
     projects: [
-      'Chamber two contains three projects. Each was tested extensively on its creator.',
+      'Chamber two contains four projects. Each was tested extensively on its creator.',
       'Flip a card to see how it works. The cards are rated for up to one million flips.'
     ],
     books: [
